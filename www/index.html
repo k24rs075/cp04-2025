@@ -183,12 +183,16 @@
     function btnAClick(e){
         active = true;
         startTime = new Date(); 
+        if(rest > 0){
+            period = rest; 
+        }
         $('#btnA').prop('disabled', true);
     }
 
     // ButtonBがクリックされた時の処理
     function btnBClick(e){
         active = false;
+        $('#btnA').prop('disabled', false);
     }
 
     // ButtonCがクリックされた時の処理
