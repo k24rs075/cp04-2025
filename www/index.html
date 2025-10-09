@@ -210,6 +210,16 @@
             var s = parseInt(rest - m*60);
             $("#time").html("経過時間： " + etime);
             $("#remain").html("残り時間： " + m + "分" + s + "秒");
+            var mstr = "分: ";
+            for(var i = 0; i < m; i++){
+                mstr += "〇";
+            }
+            $("#minuteStr").html(mstr);
+            var sstr = "秒: ";
+            for(var i = 0; i < s; i++){
+                sstr += "〇";
+            }
+            $("#secondStr").html(sstr);
             analog(rest);
             if (rest <= 0) {
                 active = false;
