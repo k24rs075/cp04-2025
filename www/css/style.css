@@ -76,33 +76,74 @@
     
     #btnA {
         font-size: 20px;
-        position:absolute; top:380px; left:2%; width:43%; height:60px; 
+        position:absolute; top:380px; left:5%; width:39%; height:60px; 
         background-color: yellow;
         color: green;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+    #btnA:hover {
+        background-color: gold;
+        color: darkgreen;
+        transform: scale(1.08);
+        box-shadow: 0 0 10px gold;
     }
     
     #btnB {
         font-size: 20px;
-        position:absolute; top:380px; left:45%; width:25%; height:60px; 
+        position:absolute; top:380px; left:46%; width:25%; height:60px; 
+        background-color: rgba(250, 64, 141, 0.863);
+        color: black;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+
+    #btnB:hover {
+        background-color: #f52eca;
+        transform: translateY(-3px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
 
     #btnC {
-        font-size: 10px;
-        position:absolute; top:380px; left:70%; width:28%; height:60px; 
+        font-size: 20px;
+        position:absolute; top:380px; left:74%; width:23%; height:60px; 
+        background-color: orange;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all 0.25s ease;
+    }
+
+    #btnC:hover {
+        background-color: #ff7b00;
+        transform: rotate(-2deg) scale(1.07);
+        box-shadow: 0 0 10px rgba(255, 140, 0, 0.6);
     }
 
     #btnD {
         font-size: 20px;
-        position: fixed;   
-        bottom: 25%;          
-        left: 50%;          
+        position: fixed; bottom: 22%; left: 50%;          
         transform: translateX(-50%); 
-        width: 100px;       
-        height: 50px;      
+
+        width: 70px; height: 70px;
+        background-color: rgb(136, 255, 0);
         color: black;
-        border-radius: 10px;
+        border: none;
+        border-radius: 50%;    
+        cursor: pointer;
+        transition: all 0.2s ease; 
     }
-    
+
+    #btnD:hover {
+        background-color: rgb(180, 255, 90);
+        transform: translateX(-50%) scale(1.1); 
+    }
+
     #minute {
         font-size: 30px;
         position:absolute; top:450px; left:60px; width:80px; height:40px;   
