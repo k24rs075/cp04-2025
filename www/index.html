@@ -38,6 +38,10 @@
         $('#btnC').click(function(e) {
             btnCClick(e);
         });
+
+        $('#btnD').click(function(e) {
+            btnDClick(e);
+        });
         init();
     });
     
@@ -162,6 +166,7 @@
         $('#btnA').prop('disabled', false);
         $('#btnB').prop('disabled', false);
         $('#btnC').prop('disabled', false);
+        $('#btnD').prop('disabled', false);
         btnCClick(null);
     }
 
@@ -192,7 +197,11 @@
     // ButtonBがクリックされた時の処理
     function btnBClick(e){
         active = false;
-        $('#btnA').prop('disabled', false);
+		rest = 0;
+	    period = 0;
+	    $("#time").html("経過時間： 0");
+	    $("#remain").html("残り時間： 0");
+		$('#btnA').prop('disabled', true);
     }
 
     // ButtonCがクリックされた時の処理
@@ -203,8 +212,14 @@
         rest = 0;
         $("#time").html("経過時間： 0");
         $("#remain").html("残り時間： " + period);
+        $('#btnA').prop('disabled', false);
     }
     
+    // ButtonDがクリックされた時の処理
+    function btnDClick(e){
+        active = false;
+        $('#btnA').prop('disabled', false);
+    }
  
     // 繰り返し実行する処理
     function timer(){  
@@ -262,6 +277,7 @@
     <button id="btnA">Start</button>  
     <button id="btnB">Stop</button>  
     <button id="btnC">Set</button>  
+    <button id="btnD">Pause</button>
     <input type="number" id="minute" value=0 >
     <input type="number" id="second" value=15 >
     <div id="barContainer">
