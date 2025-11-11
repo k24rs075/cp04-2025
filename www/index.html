@@ -20,7 +20,7 @@
             timer();
         },500);
     });  
-      
+    
     // ready クリックの処理の登録
     $(function() { 
         $('#date').click(function(e) {
@@ -215,6 +215,20 @@
             var s = parseInt(rest - m*60);
             $("#time").html("経過時間： " + etime);
             $("#remain").html("残り時間： " + m + "分" + s + "秒");
+            var percent = ((period - rest) / period) * 100;
+            var fill = document.getElementById("barFill");
+            fill.style.width = percent + "%";
+
+            var colorLow = "#00ff00"; 
+            var colorMid = "#ff9900";  
+            var colorHigh = "#ff0000";  
+            if (percent < 40) {
+                fill.style.backgroundColor = colorLow;
+            } else if (percent < 75) {
+                fill.style.backgroundColor = colorMid;
+            } else {
+                fill.style.backgroundColor = colorHigh;
+            }
             var mstr = "分: ";
             for(var i = 0; i < m; i++){
                 mstr += "〇";
@@ -226,6 +240,8 @@
             }
             $("#secondStr").html(sstr);
             analog(rest);
+            var percent = ((period - rest) / period) * 100;
+            $("#bar").val(percent);
             if (rest <= 0) {
                 active = false;
                 alarm();
@@ -248,5 +264,9 @@
     <button id="btnC">Set</button>  
     <input type="number" id="minute" value=0 >
     <input type="number" id="second" value=15 >
+    <div id="barContainer">
+        <div id="barFill"></div>
+    </div>
+    
 </body>
 </html>
